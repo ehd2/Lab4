@@ -73,6 +73,21 @@ public class Pokemon {
     }
 
     /**
+     *
+     * @param givenName Do I really need to explain this?
+     */
+    public Pokemon(String givenName) {
+        final int d6num = 6;
+        final int d20num = 20;
+        this.d6 = new Dice(d6num);
+        this.d20 = new Dice(d20num);
+        this.hitPoints = 0;
+        this.attackLevel = 0;
+        this.defenseLevel = 0;
+        this.name = "";
+    }
+
+    /**
      * Attack another Pokemon.
      * <p>
      * Calling this method will cause this Pokemon to attack another Pokemon as follows:

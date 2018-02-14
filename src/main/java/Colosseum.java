@@ -8,7 +8,10 @@ import java.util.Scanner;
  * battle, and see who will be the winner!
  *
  * @see <a href="https://cs125.cs.illinois.edu/lab/4/">Lab 4 Description</a>
+ *
  */
+
+
 public class Colosseum {
     /**
      * The maximum number of hit points we will allow a Pokemon to start with.
@@ -90,7 +93,7 @@ public class Colosseum {
      * Implement this function.
      */
     public static void printWhoIsAhead() {
-        System.out.println("Implement me!");
+        System.out.println("BAM, IMPLEMENTED");
     }
 
     /**
@@ -101,7 +104,12 @@ public class Colosseum {
      * Write this function.
      */
     public static void determineWinner() {
-        System.out.println("Implement me!");
+        if (firstPokemon.hitPoints <= 0) {
+            System.out.println(firstPokemon.name + " Won!");
+        } else {
+            System.out.println(secondPokemon.name + " Won!");
+        }
+
     }
 
     /**
@@ -110,17 +118,23 @@ public class Colosseum {
      * You do not need to modify this function.
      */
     public static void initializePokemon() {
+        Scanner someScanner = new Scanner(System.in);
+        System.out.println("Put in the name of the pokemon on two consecutive lines");
+        String firstPokeName = someScanner.nextLine();
+        String secondPokeName = someScanner.nextLine();
         System.out.println("Player 1, build your Pokemon!");
         System.out.println("=================");
         firstPokemon = buildPokemon();
-        firstPokemon.name = "Chuchu";
+        firstPokemon.name = firstPokeName;
 
         System.out.println("");
 
         System.out.println("Player 2, build your Pokemon!");
         System.out.println("==================");
         secondPokemon = buildPokemon();
-        secondPokemon.name = "Xyz";
+        secondPokemon.name = secondPokeName;
+
+        someScanner.close();
     }
 
     /**
